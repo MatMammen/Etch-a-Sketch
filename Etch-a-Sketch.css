@@ -1,17 +1,17 @@
 .grid-container {
   display: grid;
-  width: 1200px;
-  height: 1200px;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
+  width: 700px;
+  height: 700px;
   background-color: #2196F3;
   padding: 10px;
   max-width: 100%;
+  box-sizing: border-box;
 }
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
+  background:white;
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+}
+.color-picker {
+  height: 100px;
+  width: 100px;
 }
