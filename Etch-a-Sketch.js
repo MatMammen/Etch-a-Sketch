@@ -15,10 +15,10 @@ function addGridChildTotal(num) {
     gridItems = document.querySelectorAll(".grid-item");
     gridItems.forEach((Item) => {
         Item.addEventListener('mouseover',() => {
-            Item.style.background = 'green'; 
+            Item.style.background = 'black';
         });
         Item.addEventListener('touchmove',() => {
-            Item.style.background = 'green'; 
+            Item.style.background = 'black'; 
         });
     });
     
@@ -37,12 +37,12 @@ function addGridChild() {
 function colorChange() { 
     let colorPicker = document.createElement('input');
     colorPicker.type = 'color';
-    colorPicker.className = 'color-picker'
+    colorPicker.className = 'color-picker';
     document.body.appendChild(colorPicker);
 
     let colorButton = document.createElement('button');
     colorButton.textContent = 'Press me to change to chosen color!' ;
-    colorButton.style.fontSize = '50px';
+    colorButton.className = 'color-picker-confirm';
     document.body.appendChild(colorButton);
     colorButton.addEventListener('click', () => {
         gridItems.forEach((Item) => {
@@ -58,7 +58,7 @@ function colorChange() {
 function reload() {
     const reload = document.createElement('button');
     reload.textContent = 'Restart';
-    reload.style.fontSize = '50px';
+    reload.className = 'restart';
     document.body.appendChild(reload);
 
     reload.addEventListener('click', () => {
@@ -70,9 +70,11 @@ function reload() {
 function resize() {
     const resize = document.createElement('button');
     resize.textContent = 'Resize';
-    resize.style.fontSize = '50px';
+    resize.className = 'resize';
     document.body.appendChild(resize);
     let resizePrompt = document.createElement('input')
+    resizePrompt.className = 'text-box';
+    resizePrompt.placeholder = "How many blocks per side?"
     document.body.appendChild(resizePrompt);
     resize.addEventListener('click', () => {
         addGridChildTotal(resizePrompt.value);
